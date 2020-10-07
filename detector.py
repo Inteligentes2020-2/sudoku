@@ -4,7 +4,7 @@ import pytesseract as pytesseract
 
 
 def get(file_path):
-    grid = np.zeros((9, 9))
+    grid = np.zeros((9, 9), dtype=int)
     pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
     img = cv2.imread(file_path)
     starty = 385
