@@ -1,8 +1,5 @@
 import copy
 from queue import PriorityQueue
-
-
-# Creating Base Class
 import numpy as np
 
 
@@ -117,8 +114,8 @@ def isValid(grid, i, j, e):
 
 
 def solve(grid):
-    a = A_Star_Solver(grid, 0)
+    a = A_Star_Solver(grid, "0")
     a.Solve()
     for i in range(len(a.path)):
-        print("{0}){1}\n".format(i, a.path[i]))
+        print("step {0}:\n{1}\n".format(i, a.path[i]))
     return a.path[-1]
