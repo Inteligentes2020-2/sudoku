@@ -17,18 +17,18 @@ def get(file_path):
 
     # Applying Gaussian Blur to smooth out the noise
     gray = cv2.GaussianBlur(gray, (11, 11), 0)
-    cv2.imwrite("StagesImages/1.jpg", gray)
+    #cv2.imwrite("StagesImages/1.jpg", gray)
 
     # Applying thresholding using adaptive Gaussian|Mean thresholding
     gray = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C | cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
                                  cv2.THRESH_BINARY, 5, 2)
-    cv2.imwrite("StagesImages/2.jpg", gray)
+    #cv2.imwrite("StagesImages/2.jpg", gray)
 
     # Dilating the image to fill up the "cracks" in lines
     kernel = np.array([[0, 1, 0], [1, 1, 1], [0, 1, 0]], np.uint8)
     gray = cv2.dilate(gray, kernel)
     img = gray
-    cv2.imwrite("StagesImages/3.jpg", gray)
+    #cv2.imwrite("StagesImages/3.jpg", gray)
 
     for i in range(0, 9):
         for j in range(0, 9):
@@ -46,5 +46,5 @@ def get(file_path):
             except:
                 pass
 
-            cv2.imwrite('Casillas/casilla(' + str(i) + ',' + str(j) + ').png', casilla)
+            #cv2.imwrite('Casillas/casilla(' + str(i) + ',' + str(j) + ').png', casilla)
     return grid
