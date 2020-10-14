@@ -40,7 +40,6 @@ while True:
         driver.save_screenshot("sudokuSolved.png")
         driver.execute_script('document.body.style.MozTransform = "scale(0.60)";')
         driver.execute_script('document.body.style.MozTransformOrigin = "0 0";')
-    elif text=="exit":
+    elif text == "exit":
+        driver.close()
         break
-
-# driver.close()
